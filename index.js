@@ -36,8 +36,9 @@ app.get("/", async (req, res) => {
       }
 
       arrayDocs = arrayDocs.slice(0, 1500);
-      console.log(arrayDocs);
-      return arrayDocs;
+      res.json({ arrayDocs });
+      console.log("Documents Created");
+      
     } catch(err) {
       return err;
     }
