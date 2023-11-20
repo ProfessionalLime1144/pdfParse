@@ -4,7 +4,7 @@ const { RecursiveCharacterTextSplitter } = require("langchain/text_splitter");
 
 const app = express();
 
-app.listen(process.env.PORT, () => {
+app.listen(3000 || process.env.PORT, () => {
   console.log(`Connected to port ${process.env.PORT}.`);
 });
 
