@@ -1,4 +1,4 @@
-import express from "express;
+import express from "express";
 import PdfParse from "./modules/pdfParsed.js";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
