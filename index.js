@@ -36,6 +36,9 @@ app.get("/", async (req, res) => {
       }
 
       arrayDocs = arrayDocs.slice(0, 1500);
+      console.log(arrayDocs);
       return arrayDocs;
+    } catch(err) {
+      return err;
     }
 });
