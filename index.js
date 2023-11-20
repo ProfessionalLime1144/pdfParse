@@ -9,15 +9,15 @@ app.listen(3000 || process.env.PORT, () => {
 });
 
 app.get("/", async (req, res) => {
-      // Fetch the PDF file as binary data
-    try {
       // const url = "https://ocw.mit.edu/ans7870/9/9.00SC/MIT9_00SCF11_text.pdf";
       // const url = "https://pdfco-test-files.s3.us-west-2.amazonaws.com/document-parser/sample-invoice.pdf"
-      let url = req.get("url");
-      if (!url.startsWith("https:")) {
-        url = "https:" + url;
-      };
-      
+    let url = req.get("url");
+    if (!url.startsWith("https:")) {
+      url = "https:" + url;
+    };
+  
+    try {
+      // Fetch the PDF file as binary data
       const response = await fetch(url);
       
       if (!response.ok) {
