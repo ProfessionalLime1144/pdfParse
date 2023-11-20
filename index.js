@@ -45,7 +45,7 @@ app.get("/", async (req, res) => {
       console.log("Documents Created");
       
     } catch(err) {
-      res.send(err);
+      res.json({ error: err });
       console.log(err);
     }
 });
