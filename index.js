@@ -40,6 +40,7 @@ app.get("/", async (req, res) => {
       console.log("Documents Created");
       
     } catch(err) {
-      return err;
+      res.send(err);
+      console.log(err);
     }
 });
