@@ -1,6 +1,6 @@
-import express from "express";
-import PdfParse from "./modules/pdfParsed.js";
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
+const express = require("express");
+const PdfParse = require("pdf-parse");
+const { RecursiveCharacterTextSplitter } = require("langchain/text_splitter");
 
 const app = express();
 
