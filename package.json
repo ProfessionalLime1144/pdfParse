@@ -2,7 +2,7 @@
   "name": "nodejs",
   "version": "1.0.0",
   "description": "Parse PDF file given URL.",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "server": "nodemon ./index.js"
