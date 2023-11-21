@@ -10,7 +10,7 @@ app.listen(3000 || process.env.PORT, () => {
 
 app.get("/", async (req, res) => {
   console.log("Creating Documents...");
-  let url = req.get("url");
+  let url = req.get("url") || "https://mag.wcoomd.org/uploads/2018/05/blank.pdf";
   if (!url.startsWith("https:")) {
     url = "https:" + url;
   };
