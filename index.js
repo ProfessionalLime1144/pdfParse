@@ -9,7 +9,7 @@ app.listen(3000 || process.env.PORT, () => {
 });
 
 app.get("/", async (req, res) => {
-  console.log("Creating Documents");
+  console.log("Creating Documents...");
   let url = req.get("url");
   if (!url.startsWith("https:")) {
     url = "https:" + url;
@@ -40,10 +40,8 @@ app.get("/", async (req, res) => {
       arrayDocs.push(doc.pageContent);
     };
     arrayDocs = arrayDocs.slice(0, 1500);
-    res.send(arrayDocs);
-    
-    // res.json({ arrayDocs });
-    console.log("Documents Created");
+    res.json(arrayDocs);
+    console.log("Documents Created.");
     
   } catch(err) {
     res.json({ error: err });
