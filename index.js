@@ -40,11 +40,11 @@ app.get("/", async (req, res) => {
       arrayDocs.push(doc.pageContent);
     };
     arrayDocs = arrayDocs.slice(0, 1500);
-    res.json({ arrayDocs });
+    res.send(arrayDocs);
     
+    // res.json({ arrayDocs });
     console.log("Documents Created");
-    // res.send(JSON.stringify(arrayDocs));
-      
+    
   } catch(err) {
     res.json({ error: err });
     console.log(err);
