@@ -20,8 +20,8 @@ app.get("/", async (req, res) => {
     
     if (!response.ok) {
       console.log(url);
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+      res.json({ error: `HTTP error! Status: ${response.status}` });
+    };
     const data = await response.arrayBuffer();
 
     // Convert binary data to text and then embed it
