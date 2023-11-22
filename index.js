@@ -29,7 +29,7 @@ app.get("/", async (req, res) => {
     
     const text = parsedData.text;
     const splitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 500,
+      chunkSize: 1000,
       chunkOverlap: 100
     });
 
