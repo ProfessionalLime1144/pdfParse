@@ -36,11 +36,17 @@ app.get("/", async (req, res) => {
     const docs = await splitter.createDocuments([text]);
     let arrayDocs = [];
 
+    // Replace double to single quotes
     for (const doc of docs) {
-      arrayDocs.push(doc.pageContent);
+      arrayDocs.push(doc.pageContent.replace(/[“„”]/g, "'"));
     };
+    
     arrayDocs = arrayDocs.slice(0, 1500);
+    
+    // Replace double to single quotes
+    arrayDocs = arrayDocs.map(index => index.replace(/"/g, "'"));
     res.json(arrayDocs);
+    
     console.log("Documents Created.");
     
   } catch(err) {
